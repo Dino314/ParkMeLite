@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">		
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">		
+		<!-- Bootstrap CSS -->		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">		
+		<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.14.2/dist/bootstrap-table.min.css">		
+		<title>ParkMeLite</title>		
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	</head>
+	<body>		
+		<div class="container">			
+			<h1>Parkirna mesta</h1>		
+			<table class="table-striped" id="table" data-toggle="table" data-url="ParkirnaMesta.json" data-sortable="true">				
+				<thead>			
+					<tr>					
+						<th data-field="Cona" data-formatter="bold" class="text-center" data-sortable="true">Cona</th>						
+						<th data-field="Parking">Ime parkirišča</th>						
+						<!--<th data-field="stMest">Št. parkirnih mest</th>						
+						<th data-field="stInvalid">Št. mest za invalide</th>						
+						<th data-field="stElektricni">Št. mest za električna vozila</th>-->						
+						<th data-field="PrvaUra" data-formatter="cena" class="text-right" data-sortable="true">Cena za prvo uro</th>						
+						<th data-field="NovaUra" data-formatter="cena" class="text-right" data-sortable="true">Cena za vsako naslednjo uro</th>						
+						<th data-field="" data-formatter="prostCas" data-sortable="true">Prosto</th>					
+					</tr>				
+				</thead>			
+			</table>		
+		</div>		
+		<!-- Optional JavaScript -->		
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->		
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>		
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>		
+		<script src="https://unpkg.com/bootstrap-table@1.14.2/dist/bootstrap-table.min.js"></script>				
+		<script src="script.js"></script>	
+	</body>
+</html>
