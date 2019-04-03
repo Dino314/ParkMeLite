@@ -1,7 +1,7 @@
 [
  {
    "Cona": "Brez",
-   "Parking": "Trznica znotraj zapornic ***",
+   "Parking": "Tržnica znotraj zapornic ",
    "stMest": 349,
    "stInvalid": 11,
    "stElektricni": 2,
@@ -13,8 +13,8 @@
    "Pet": "00-24",
    "Sob": "00-24",
    "Ned": "0",
-   "PrvaUra": 0,
-   "NovaUra": 1
+   "PrvaUra": "0",
+   "NovaUra": "1"
  },
  {
    "Cona": "KP 1",
@@ -30,8 +30,8 @@
    "Pet": "06-19",
    "Sob": "06-14",
    "Ned": "0",
-   "PrvaUra": 0.5,
-   "NovaUra": 1
+   "PrvaUra": "0,5",
+   "NovaUra": "1"
  },
  {
    "Cona": "KP 2",
@@ -47,12 +47,12 @@
    "Pet": "06-19",
    "Sob": "0",
    "Ned": "0",
-   "PrvaUra": 1,
-   "NovaUra": 1
+   "PrvaUra": "1",
+   "NovaUra": "1"
  },
  {
    "Cona": "KP 3",
-   "Parking": "Brolo 1 in 2",
+   "Parking": "Brolo 1, 2",
    "stMest": 91,
    "stInvalid": 4,
    "stElektricni": 0,
@@ -64,8 +64,8 @@
    "Pet": "06-19",
    "Sob": "0",
    "Ned": "0",
-   "PrvaUra": 1,
-   "NovaUra": 1
+   "PrvaUra": "1",
+   "NovaUra": "1"
  },
  {
    "Cona": "KP 4",
@@ -73,7 +73,7 @@
    "stMest": 22,
    "stInvalid": 1,
    "stElektricni": 0,
-   "Type": "1",
+   "Type": "4",
    "Pon": "00-24",
    "Tor": "00-24",
    "Sre": "00-24",
@@ -81,16 +81,16 @@
    "Pet": "00-24",
    "Sob": "00-24",
    "Ned": "00-24",
-   "PrvaUra": 0.5,
-   "NovaUra": 1
+   "PrvaUra": "0,5",
+   "NovaUra": "1"
  },
  {
    "Cona": "KP 5",
-   "Parking": "Ukmarjev trg 1 in 2",
+   "Parking": "Ukmarjev trg 1 in 2 zimski",
    "stMest": 110,
    "stInvalid": 3,
    "stElektricni": 0,
-   "Type": "01.10-30.04",
+   "Type": "10-040",
    "Pon": "06-15",
    "Tor": "06-15",
    "Sre": "06-15",
@@ -98,16 +98,16 @@
    "Pet": "06-15",
    "Sob": "06-15",
    "Ned": "06-15",
-   "PrvaUra": 0.5,
-   "NovaUra": 1
+   "PrvaUra": "0,5",
+   "NovaUra": "1"
  },
  {
    "Cona": "KP 5",
-   "Parking": "Ukmarjev trg 1 in 2",
+   "Parking": "Ukmarjev trg 1 in 2 poletni",
    "stMest": 110,
    "stInvalid": 3,
    "stElektricni": 0,
-   "Type": "01.05-30.09",
+   "Type": "05-091",
    "Pon": "06-19",
    "Tor": "06-19",
    "Sre": "06-19",
@@ -115,8 +115,8 @@
    "Pet": "06-19",
    "Sob": "06-19",
    "Ned": "06-19",
-   "PrvaUra": 0.5,
-   "NovaUra": 1
+   "PrvaUra": "0,5",
+   "NovaUra": "1"
  },
  {
    "Cona": "KP 6",
@@ -132,12 +132,12 @@
    "Pet": "06-15",
    "Sob": "0",
    "Ned": "0",
-   "PrvaUra": 0.5,
-   "NovaUra": 1
+   "PrvaUra": "0,5",
+   "NovaUra": "1"
  },
  {
    "Cona": "KP 7",
-   "Parking": "OS Anton Ukmar",
+   "Parking": "OŠ Anton Ukmar",
    "stMest": 67,
    "stInvalid": 2,
    "stElektricni": 0,
@@ -149,8 +149,8 @@
    "Pet": "07-16",
    "Sob": "0",
    "Ned": "0",
-   "PrvaUra": 0,
-   "NovaUra": 1
+   "PrvaUra": "0",
+   "NovaUra": "1"
  },
  {
    "Cona": "KP 8",
@@ -166,12 +166,12 @@
    "Pet": "06-15",
    "Sob": "0",
    "Ned": "0",
-   "PrvaUra": 0.5,
-   "NovaUra": 0.5
+   "PrvaUra": "0,5",
+   "NovaUra": "0,5"
  },
  {
    "Cona": "KP 9",
-   "Parking": "Severna obvoznica 1 in 2",
+   "Parking": "Severna obvoznica 1, 2",
    "stMest": 84,
    "stInvalid": 3,
    "stElektricni": 3,
@@ -183,8 +183,8 @@
    "Pet": "06-15",
    "Sob": "0",
    "Ned": "0",
-   "PrvaUra": 0.5,
-   "NovaUra": 1
+   "PrvaUra": "0,5",
+   "NovaUra": "1"
  },
  {
    "Cona": "KP 10",
@@ -200,8 +200,8 @@
    "Pet": "06-15",
    "Sob": "0",
    "Ned": "0",
-   "PrvaUra": 0.5,
-   "NovaUra": 1
+   "PrvaUra": "0,5",
+   "NovaUra": "1"
  },
  {
    "Cona": "KP 11",
@@ -217,12 +217,12 @@
    "Pet": "06-15",
    "Sob": "0",
    "Ned": "0",
-   "PrvaUra": 0.5,
-   "NovaUra": 1
+   "PrvaUra": "0,5",
+   "NovaUra": "1"
  },
  {
    "Cona": "KP 13",
-   "Parking": "Trznica parkomat 1 (izven zapornic) ***",
+   "Parking": "Tržnica parkomat 1 (izven zapornic) ",
    "stMest": 82,
    "stInvalid": 2,
    "stElektricni": 0,
@@ -234,12 +234,12 @@
    "Pet": "06-19",
    "Sob": "06-14",
    "Ned": "0",
-   "PrvaUra": 0.5,
-   "NovaUra": 1
+   "PrvaUra": "0,5",
+   "NovaUra": "1"
  },
  {
    "Cona": "KP 14",
-   "Parking": "Trznica parkomat 2 (izven zapornic) ***",
+   "Parking": "Tržnica parkomat 2 (izven zapornic) ",
    "stMest": 78,
    "stInvalid": 2,
    "stElektricni": 0,
@@ -251,8 +251,8 @@
    "Pet": "06-19",
    "Sob": "06-14",
    "Ned": "0",
-   "PrvaUra": 0.5,
-   "NovaUra": 1
+   "PrvaUra": "0,5",
+   "NovaUra": "1"
  },
  {
    "Cona": "KP 15",
@@ -268,12 +268,12 @@
    "Pet": "06-15",
    "Sob": "0",
    "Ned": "0",
-   "PrvaUra": 0,
-   "NovaUra": 1
+   "PrvaUra": "0",
+   "NovaUra": "1"
  },
  {
    "Cona": "KP 16",
-   "Parking": "Zeleni park 1 in 2",
+   "Parking": "Zeleni park 1, 2",
    "stMest": 130,
    "stInvalid": 4,
    "stElektricni": 0,
@@ -285,12 +285,12 @@
    "Pet": "06-19",
    "Sob": "06-14",
    "Ned": "0",
-   "PrvaUra": 0.5,
-   "NovaUra": 1
+   "PrvaUra": "0,5",
+   "NovaUra": "1"
  },
  {
    "Cona": "KP 17",
-   "Parking": "Ob stadionu 1 in 2",
+   "Parking": "Ob stadionu 1, 2",
    "stMest": 408,
    "stInvalid": 14,
    "stElektricni": 0,
@@ -302,12 +302,12 @@
    "Pet": "06-15",
    "Sob": "0",
    "Ned": "0",
-   "PrvaUra": 0.5,
-   "NovaUra": 1
+   "PrvaUra": "0,5",
+   "NovaUra": "1"
  },
  {
    "Cona": "KP 18",
-   "Parking": "Ob atletskem stadionu 1 in 2",
+   "Parking": "Ob atletskem stadionu 1, 2",
    "stMest": 155,
    "stInvalid": 4,
    "stElektricni": 0,
@@ -319,16 +319,16 @@
    "Pet": "06-15",
    "Sob": "0",
    "Ned": "0",
-   "PrvaUra": 0,
-   "NovaUra": 1
+   "PrvaUra": "0",
+   "NovaUra": "1"
  },
  {
    "Cona": "KP 19",
-   "Parking": "Parkirisce Zusterna",
+   "Parking": "Parkirišče Žusterna",
    "stMest": 348,
    "stInvalid": 2,
    "stElektricni": 0,
-   "Type": "1",
+   "Type": "4",
    "Pon": "00-24",
    "Tor": "00-24",
    "Sre": "00-24",
@@ -336,12 +336,12 @@
    "Pet": "00-24",
    "Sob": "00-24",
    "Ned": "00-24",
-   "PrvaUra": 0,
-   "NovaUra": 0.5
+   "PrvaUra": "0",
+   "NovaUra": "0,5"
  },
  {
    "Cona": "KP 20",
-   "Parking": "Ob Posti 1",
+   "Parking": "Ob Pošti 1",
    "stMest": 19,
    "stInvalid": 2,
    "stElektricni": 0,
@@ -353,12 +353,12 @@
    "Pet": "06-15",
    "Sob": "0",
    "Ned": "0",
-   "PrvaUra": 0,
-   "NovaUra": 1
+   "PrvaUra": "0",
+   "NovaUra": "1"
  },
  {
    "Cona": "KP 21",
-   "Parking": "Ob Posti 2 *",
+   "Parking": "Ob Pošti 2 ",
    "stMest": 54,
    "stInvalid": 2,
    "stElektricni": 0,
@@ -370,12 +370,12 @@
    "Pet": "00-24",
    "Sob": "00-24",
    "Ned": "00-24",
-   "PrvaUra": 1,
-   "NovaUra": 0
+   "PrvaUra": "1",
+   "NovaUra": "NA"
  },
  {
    "Cona": "KP 22",
-   "Parking": "Salara 1",
+   "Parking": "Šalara 1",
    "stMest": 19,
    "stInvalid": 1,
    "stElektricni": 0,
@@ -387,12 +387,12 @@
    "Pet": "06-15",
    "Sob": "0",
    "Ned": "0",
-   "PrvaUra": 0,
-   "NovaUra": 0.5
+   "PrvaUra": "0",
+   "NovaUra": "0,5"
  },
  {
    "Cona": "KP 23",
-   "Parking": "Salara 2",
+   "Parking": "Šalara 2",
    "stMest": 13,
    "stInvalid": 0,
    "stElektricni": 0,
@@ -404,12 +404,12 @@
    "Pet": "06-15",
    "Sob": "0",
    "Ned": "0",
-   "PrvaUra": 0,
-   "NovaUra": 0.5
+   "PrvaUra": "0",
+   "NovaUra": "0,5"
  },
  {
    "Cona": "KP 24",
-   "Parking": "Salara 3",
+   "Parking": "Šalara 3",
    "stMest": 18,
    "stInvalid": 1,
    "stElektricni": 0,
@@ -421,8 +421,8 @@
    "Pet": "06-15",
    "Sob": "0",
    "Ned": "0",
-   "PrvaUra": 0,
-   "NovaUra": 0.5
+   "PrvaUra": "0",
+   "NovaUra": "0,5"
  },
  {
    "Cona": "KP 25",
@@ -438,8 +438,8 @@
    "Pet": "06-15",
    "Sob": "0",
    "Ned": "0",
-   "PrvaUra": 0,
-   "NovaUra": 0.5
+   "PrvaUra": "0",
+   "NovaUra": "0,5"
  },
  {
    "Cona": "KP 26",
@@ -455,12 +455,12 @@
    "Pet": "06-15",
    "Sob": "0",
    "Ned": "0",
-   "PrvaUra": 0.5,
-   "NovaUra": 1
+   "PrvaUra": "0,5",
+   "NovaUra": "1"
  },
  {
    "Cona": "KP 27",
-   "Parking": "Kolodvorska 1 *",
+   "Parking": "Kolodvorska 1 ",
    "stMest": 121,
    "stInvalid": 3,
    "stElektricni": 0,
@@ -472,12 +472,12 @@
    "Pet": "00-24",
    "Sob": "00-24",
    "Ned": "00-24",
-   "PrvaUra": 1,
-   "NovaUra": 0
+   "PrvaUra": "1",
+   "NovaUra": "NA"
  },
  {
    "Cona": "KP 28",
-   "Parking": "Kolodvorska 2 *",
+   "Parking": "Kolodvorska 2 ",
    "stMest": 61,
    "stInvalid": 2,
    "stElektricni": 2,
@@ -489,12 +489,12 @@
    "Pet": "00-24",
    "Sob": "00-24",
    "Ned": "00-24",
-   "PrvaUra": 1,
-   "NovaUra": 0
+   "PrvaUra": "1",
+   "NovaUra": "NA"
  },
  {
    "Cona": "KP 29",
-   "Parking": "Ob Semedeli *",
+   "Parking": "Ob Semedeli ",
    "stMest": 263,
    "stInvalid": 2,
    "stElektricni": 6,
@@ -506,12 +506,12 @@
    "Pet": "00-24",
    "Sob": "00-24",
    "Ned": "00-24",
-   "PrvaUra": 1,
-   "NovaUra": 0
+   "PrvaUra": "1",
+   "NovaUra": "NA"
  },
  {
    "Cona": "KP 30",
-   "Parking": "Ob mandracu",
+   "Parking": "Ob mandraču",
    "stMest": 82,
    "stInvalid": 4,
    "stElektricni": 0,
@@ -523,8 +523,8 @@
    "Pet": "06-15",
    "Sob": "0",
    "Ned": "0",
-   "PrvaUra": 0,
-   "NovaUra": 1
+   "PrvaUra": "0",
+   "NovaUra": "1"
  },
  {
    "Cona": "KP 31",
@@ -540,12 +540,12 @@
    "Pet": "06-15",
    "Sob": "0",
    "Ned": "0",
-   "PrvaUra": 0,
-   "NovaUra": 1
+   "PrvaUra": "0",
+   "NovaUra": "1"
  },
  {
    "Cona": "KP 32",
-   "Parking": "Skofije center",
+   "Parking": "Škofije center",
    "stMest": 20,
    "stInvalid": 1,
    "stElektricni": 0,
@@ -557,12 +557,12 @@
    "Pet": "06-15",
    "Sob": "0",
    "Ned": "0",
-   "PrvaUra": 0,
-   "NovaUra": 0.5
+   "PrvaUra": "0",
+   "NovaUra": "0,5"
  },
  {
    "Cona": "KP 33",
-   "Parking": "Makadamsko parkirisce za trznico ***",
+   "Parking": "Makadamsko parkirišče za tržnico ",
    "stMest": 250,
    "stInvalid": 2,
    "stElektricni": 0,
@@ -574,12 +574,12 @@
    "Pet": "00-24",
    "Sob": "0",
    "Ned": "0",
-   "PrvaUra": 1,
-   "NovaUra": 0
+   "PrvaUra": "1",
+   "NovaUra": "NA"
  },
  {
    "Cona": "KP 35",
-   "Parking": "Mejni prehod Skofije",
+   "Parking": "Mejni prehod Škofije",
    "stMest": 31,
    "stInvalid": 2,
    "stElektricni": 0,
@@ -591,8 +591,8 @@
    "Pet": "06-15",
    "Sob": "0",
    "Ned": "0",
-   "PrvaUra": 0,
-   "NovaUra": 0.5
+   "PrvaUra": "0",
+   "NovaUra": "0,5"
  },
  {
    "Cona": "AN01",
@@ -608,12 +608,12 @@
    "Pet": "08-22",
    "Sob": "08-22",
    "Ned": "08-22",
-   "PrvaUra": 0,
-   "NovaUra": 0.5
+   "PrvaUra": "0",
+   "NovaUra": "0,5"
  },
  {
    "Cona": "AN02",
-   "Parking": "Parkirisce Lazaret avtodomi",
+   "Parking": "Parkirišče Lazaret avtodomi",
    "stMest": 12,
    "stInvalid": 0,
    "stElektricni": 0,
@@ -625,16 +625,16 @@
    "Pet": "06-22",
    "Sob": "06-22",
    "Ned": "06-22",
-   "PrvaUra": 0.5,
-   "NovaUra": 0.5
+   "PrvaUra": "0,5",
+   "NovaUra": "0,5"
  },
  {
    "Cona": "AN03",
-   "Parking": "Parkirisce Lazaret avtomobili",
+   "Parking": "Parkirišče Lazaret avtomobili",
    "stMest": 53,
    "stInvalid": 2,
    "stElektricni": 0,
-   "Type": "1",
+   "Type": "4",
    "Pon": "00-24",
    "Tor": "00-24",
    "Sre": "00-24",
@@ -642,7 +642,7 @@
    "Pet": "00-24",
    "Sob": "00-24",
    "Ned": "00-24",
-   "PrvaUra": 0.5,
-   "NovaUra": 0.5
+   "PrvaUra": "0,5",
+   "NovaUra": "0,5"
  }
 ]

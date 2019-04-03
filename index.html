@@ -11,10 +11,10 @@
 		<link rel="icon" href="favicon.ico" type="image/x-icon" />
 	</head>
 	<body>		
-		<div class="container">			
+		<div class="container pb-4">			
 			<h1>Parkirna mesta</h1>		
-			<table class="table-striped" id="table" data-toggle="table" data-url="ParkirnaMesta.json" data-sortable="true">				
-				<thead>			
+			<table class="table-striped" id="table" data-toggle="table" data-url="ParkirnaMesta.json" data-sortable="true" data-unique-id="prostCas">				
+				<thead class="bg-success text-light">			
 					<tr>					
 						<th data-field="Cona" data-formatter="bold" class="text-center" data-sortable="true">Cona</th>						
 						<th data-field="Parking">Ime parkirišča</th>						
@@ -23,7 +23,7 @@
 						<th data-field="stElektricni">Št. mest za električna vozila</th>-->						
 						<th data-field="PrvaUra" data-formatter="cena" class="text-right" data-sortable="true">Cena za prvo uro</th>						
 						<th data-field="NovaUra" data-formatter="cena" class="text-right" data-sortable="true">Cena za vsako naslednjo uro</th>						
-						<th data-field="" data-formatter="prostCas" data-sortable="true">Prosto</th>					
+						<th data-field="" data-formatter="prostCas" data-sortable="true">Stanje</th>					
 					</tr>				
 				</thead>			
 			</table>		
