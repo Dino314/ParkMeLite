@@ -13,16 +13,18 @@
 	<body>		
 		<div class="container pb-4">			
 			<h1>Parkirna mesta</h1>		
+			
 			<table class="table-striped" id="table" data-toggle="table" data-url="ParkirnaMesta.json" data-sortable="true" data-unique-id="prostCas">				
 				<thead class="bg-success text-light">			
 					<tr>					
 						<th data-field="Cona" data-formatter="bold" class="text-center" data-sortable="true">Cona</th>						
-						<th data-field="Parking">Ime parkirišča</th>						
+						<th data-field="Parking">Ime<br />parkirišča</th>						
 						<!--<th data-field="stMest">Št. parkirnih mest</th>						
 						<th data-field="stInvalid">Št. mest za invalide</th>						
 						<th data-field="stElektricni">Št. mest za električna vozila</th>-->						
-						<th data-field="PrvaUra" data-formatter="cena" class="text-right" data-sortable="true">Cena za prvo uro</th>						
-						<th data-field="NovaUra" data-formatter="cena" class="text-right" data-sortable="true">Cena za vsako naslednjo uro</th>						
+						<th data-field="PrvaUra" data-formatter="cena" class="text-right d-none d-lg-table-cell" data-sortable="true">Cena za prvo uro</th>						
+						<th data-field="NovaUra" data-formatter="cena" class="text-right d-none d-lg-table-cell" data-sortable="true">Cena za vsako naslednjo uro</th>
+						<th data-field="" data-formatter="cenePodatki" class="d-none d-sm-table-cell d-lg-none text-nowrap" data-sortable="true">Cena</th>
 						<th data-field="" data-formatter="prostCas" data-sortable="true">Stanje</th>					
 					</tr>				
 				</thead>			
