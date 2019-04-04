@@ -45,9 +45,9 @@ function prostCas(value, row, index){
 			}
 			text += "<b>"+minute+" minut</b></t><br />";
 			return text;
-		}else if (ura > maxUra){
+		}else if (ura >= maxUra){
 			var ostanek = (parseInt(minUra)+23)-parseInt(ura);
-			//console.log("ostanek: "+ostanek);
+			
 			
 			text += "<t class='text-success'>Brezplačno še ";
 			if (ostanek != 0){
@@ -66,6 +66,7 @@ function prostCas(value, row, index){
 			return text;
 		}else if(maxUra < 24){
 			var ostanek = parseInt(maxUra) - parseInt(ura)-1;
+			//console.log("ostanek: "+ostanek);
 			
 			text += "<t class='text-danger'>Za plačat ostane še ";
 			if (ostanek != 0){
@@ -93,7 +94,7 @@ function prostCas(value, row, index){
 		//za plačat 1€ na dan, ki traja samo do 23:59
 		var ostanek = 23-ura;
 		
-		text += "<t class='text-danger'>Za plačat 1€, ki traja do konca dneva; trenutno ostane še ";
+		text += "<t class='text-danger'>Za plačat 1€, ki traja do konca dneva,<br/>trenutno ostane še ";
 		if (ostanek != 0){
 			text += "<b>"+ostanek+"ur</b> in ";
 		}
