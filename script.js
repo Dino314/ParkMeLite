@@ -146,6 +146,11 @@ function cena(value){
 	}			
 }
 
+function Slice(value){
+	//return value.slice(3);
+	return value;
+}
+
 function cenePodatki(value, row){
 	return "<b>Prva ura:</b> "+cena(row.PrvaUra)+"<br /><b>Vsaka naslednja:</b> "+cena(row.NovaUra);
 }
