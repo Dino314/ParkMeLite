@@ -4,10 +4,11 @@
 	$čas = date("H")*60 + date("i");
 	$mesec = date("m");
 	$dnevi = array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
-	$danNum = date("N");
+	$danNum = date("N") % 7;
 	$dan = $dnevi[$danNum];
 
 	//foreach, pregled če rabi odstraniti obdobja ki ne obratujejo
+	$i = -1;
 	foreach($array as $vrstica){
 		if($vrstica["Obdobje"] != 0){
 			$min = substr($vrstica["Obdobje"], 0, 2);
@@ -34,11 +35,14 @@
 	//foreach, izračun časa
 	foreach($array as $vrstica){
 		$i++;
+		//dodaj stevilko pred cono za lazje sortiranje
+		$array[$i]["Cona"] = sprintf('%03d', $i).$array[$i]["Cona"];
+		
 		$type = $vrstica["Type"];
 		
 		if ($type == 3){
-			$array[$i]["Stanje"] = "<t class='text-danger'>Vedno je za plačat!</t>";
-			$array[$i]["Sort"] = 4;
+			$array[$i]["Stanje"] = "600<t class='text-danger'>Vedno je za plačat!</t>";
+			$array[$i]["Sort"] = 500;
 			continue;
 		}
 		
@@ -51,8 +55,8 @@
 		//echo $minuta."<br /><br />";
 		
 		if ($type == 2){
-			$array[$i]["Stanje"] = "<t class='text-danger'>Za plačat 1€, ki traja do konca dneva,<br/>trenutno ostane še <b>".$ura." ur</b> in <b>".$minuta." minut</b></t>";
-			$array[$i]["Sort"] = 2;
+			$array[$i]["Stanje"] = "500<t class='text-danger'>Za plačat 1€, ki traja do konca dneva,<br/>trenutno ostane še <b>".$ura." ur</b> in <b>".$minuta." minut</b></t>";
+			$array[$i]["Sort"] = 400;
 			continue;
 		}
 		
@@ -72,14 +76,14 @@
 			}
 			
 			
-			$array[$i]["Stanje"] = "<t class='text-danger'>Za plačat ostane še <b>".$ura." ur</b> in <b>".$minuta." minut</b></t>";
-			$array[$i]["Sort"] = 3;
+			$array[$i]["Stanje"] = sprintf('%03d', 200+$ura)."<t class='text-danger'>Za plačat ostane še <b>".$ura." ur</b> in <b>".$minuta." minut</b></t>";
+			$array[$i]["Sort"] = sprintf('%03d', 200+$ura);
 		}else if ($čas < $od){	//če je ura preden se začne plačat
 			$minuta = ($od - $čas) % 60;
 			$ura = ($od - $čas - $minuta) / 60;
 			
-			$array[$i]["Stanje"] = "<t class='text-success'>Brezplačno še <b>".$ura." ur</b> in <b>".$minuta." minut</b></t>";
-			$array[$i]["Sort"] = 1;
+			$array[$i]["Stanje"] = sprintf('%03d', 200-$ura)."<t class='text-success'>Brezplačno še <b>".$ura." ur</b> in <b>".$minuta." minut</b></t>";
+			$array[$i]["Sort"] = sprintf('%03d', 200-$ura);
 			
 		}else if ($čas > $do || $vrstica[$dan] == "0"){			
 			$ostane = 24*60 - $čas;
@@ -96,8 +100,8 @@
 			$minuta = $ostane % 60;
 			$ura = ($ostane - $minuta) / 60;
 			
-			$array[$i]["Stanje"] = "<t class='text-success'>Brezplačno še <b>".$ura." ur</b> in <b>".$minuta." minut</b></t>";
-			$array[$i]["Sort"] = 1;
+			$array[$i]["Stanje"] = sprintf('%03d', 200-$ura)."<t class='text-success'>Brezplačno še <b>".$ura." ur</b> in <b>".$minuta." minut</b></t>";
+			$array[$i]["Sort"] = sprintf('%03d', 200-$ura);
 			//$array[$i]["Stanje"] = "<t class='text-success'>".($ostane/60)."</t>";
 		}
 		
@@ -105,9 +109,9 @@
 	}
 	
 	//foreach, sortiranje
-	/*foreach($array as $vrstica){
-		
-	}*/
+	usort($array, function($a, $b) {
+		return $a['Sort'] - $b['Sort'];
+	});
 	
 	
 	

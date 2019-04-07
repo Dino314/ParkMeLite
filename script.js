@@ -1,8 +1,20 @@
+var teden = new Array(7);				
+teden[0] = "Nedelja";				
+teden[1] = "Ponedeljek";				
+teden[2] = "Torek";				
+teden[3] = "Sreda";				
+teden[4] = "Četrtek";				
+teden[5] = "Petek";				
+teden[6] = "Sobota";
+var today = new Date();
+var text = "<small class='text-muted'>Danes je:</small> "+teden[today.getDay()]+"<small class='text-muted'>, ura je:</small> "+today.getHours()+":"+today.getMinutes();
+
+
 $(document).ready(function() {
-	
+	$("#date").html(text);
 });
 
-function prostCas(value, row, index){				
+/*function prostCas(value, row, index){				
 	var today = new Date();				
 	var ura = today.getHours();
 	//ura = 20;
@@ -122,16 +134,12 @@ function prostCas(value, row, index){
 	}
 	else{
 		return "<b class='text-warning'>Ne obratuje trenutno</b><br />";
-		/*$('#table').bootstrapTable('remove', {
-	        field: 'Parking',
-	        values: ["6"]
-	      });*/
 	}
 
-}						
+}*/						
 
 function bold(value){				
-	return "<b>"+value+"</b>";			
+	return "<b>"+value.slice(3)+"</b>";			
 }						
 
 function cena(value){
@@ -147,8 +155,7 @@ function cena(value){
 }
 
 function Slice(value){
-	//return value.slice(3);
-	return value;
+	return value.slice(3);
 }
 
 function cenePodatki(value, row){
