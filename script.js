@@ -1,142 +1,79 @@
-var teden = new Array(7);				
-teden[0] = "Nedelja";				
-teden[1] = "Ponedeljek";				
-teden[2] = "Torek";				
-teden[3] = "Sreda";				
-teden[4] = "Četrtek";				
-teden[5] = "Petek";				
-teden[6] = "Sobota";
-var today = new Date();
-var text = "<small class='text-muted'>Danes je:</small> "+teden[today.getDay()]+"<small class='text-muted'>, ura je:</small> "+today.getHours()+":"+today.getMinutes();
+//LEAFLET
 
+var mymap = L.map('mapid').setView([45.5581, 13.7415], 13);
+
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets',
+    accessToken: 'pk.eyJ1IjoiZHlub3ZhZXIiLCJhIjoiY2p1YXh3dG1wMDcyMzN5bDQ1dm0xd2hsbiJ9.bc4SXUp1nKc22_Y4XWoPhw'
+}).addTo(mymap);
+
+var marker0 = L.marker([45.54327,13.71243]).addTo(mymap);
+var marker1 = L.marker([45.58248,13.75617]).addTo(mymap);
+marker0.bindPopup("OŠ Anton Ukmar");
+marker1.bindPopup("Hrvatini");
+
+//END LEAFLET
+
+
+var today = new Date();
+var dan = today.getDay();
+var ura = ("0"+today.getHours()).slice(-2)+":"+("0"+today.getMinutes()).slice(-2);
 
 $(document).ready(function() {
-	$("#date").html(text);
+	$("#dan").val(dan);
+	$("#ura").val(ura);
+	
+	//setInterval(reset, 1000 * 60);
+
+	$("#reset").click(function(){
+		var today = new Date();
+		var dan = today.getDay();
+		var ura = ('0'+today.getHours()).slice(-2)+":"+('0'+today.getMinutes()).slice(-2);
+
+		$("#dan").val(dan);
+		$("#ura").val(ura);
+		
+		$('#table').bootstrapTable('refresh', {
+			url: 'skripta.php?kraj='+$("#kraj").val()
+		});
+	});
+
+	$("#set").click(function(){
+		var ura = $("#ura").val();
+		ura = ura.slice(0, 2) * 60 + parseInt(ura.slice(3, 5));
+		
+		$('#table').bootstrapTable('refresh', {
+			url: 'skripta.php?kraj='+$("#kraj").val()+'&dan='+$("#dan").val()+'&ura='+ura
+		});
+	});
+
+	$("#map").click(function(){
+		$("#tabela, #mapa").toggleClass("d-none");
+		$("#tabela, #mapa").toggleClass("d-block");
+
+		mymap.invalidateSize();
+
+	});
 });
 
-/*function prostCas(value, row, index){				
-	var today = new Date();				
-	var ura = today.getHours();
-	//ura = 20;
-	var danes = today.getDay();
-	//danes = 0;
-	var minute = 60-today.getMinutes();
-	var text = "";
-	
-	var teden = new Array(7);				
-	teden[0] = "Ned";				
-	teden[1] = "Pon";				
-	teden[2] = "Tor";				
-	teden[3] = "Sre";				
-	teden[4] = "Cet";				
-	teden[5] = "Pet";				
-	teden[6] = "Sob";
-	
-	var dan = row[teden[danes]];
-	var mesec = today.getMonth()+1;
-	var minUra = dan.slice(0, 2);
-	var maxUra = dan.slice(3, 5);
-		
-	//console.log(dan.slice(0, 2));
-	//console.log(maxUra);
-	if (row.Type == "1" || (String(row.Type).charAt(5) == "0" && (mesec >= 10 || mesec <= 4)) || (String(row.Type).charAt(5) == "1" && (mesec >= 5 && mesec <= 9))){
-		if (dan == "0"){
-			var i = danes+1;
-			var ostanek = 23-ura;
-			
-			while (row[teden[i%7]] == "0"){
-				ostanek += 24;
-				i++;
-			}
-			
-			ostanek += parseInt((row[teden[i%7]]+1).slice(0, 2));
-			
-			text += "<t class='text-success'>Brezplačno še ";
-			if (ostanek != 0){
-				text += "<b>"+ostanek+"ur</b> in ";
-			}
-			text += "<b>"+minute+" minut</b></t><br />";
-			return text;
-		}else if (ura >= maxUra){
-			var ostanek = (parseInt(minUra)+23)-parseInt(ura);
-			
-			
-			text += "<t class='text-success'>Brezplačno še ";
-			if (ostanek != 0){
-				text += "<b>"+ostanek+"ur</b> in ";
-			}
-			text += "<b>"+minute+" minut</b></t><br />";
-			return text;
-		}else if (ura < minUra){
-			var ostanek = parseInt(minUra)-parseInt(ura)-1;
-			
-			text += "<t class='text-success'>Brezplačno še ";
-			if (ostanek != 0){
-				text += "<b>"+ostanek+"ur</b> in ";
-			}
-			text += "<b>"+minute+" minut</b></t><br />";
-			return text;
-		}else if(maxUra < 24){
-			var ostanek = parseInt(maxUra) - parseInt(ura)-1;
-			//console.log("ostanek: "+ostanek);
-			
-			text += "<t class='text-danger'>Za plačat ostane še ";
-			if (ostanek != 0){
-				text += "<b>"+ostanek+"ur</b> in ";
-			}
-			text += "<b>"+minute+" minut</b></t><br />";
-			return text;
-		}else{
-			var i = danes+1;
-			var ostanek = 23-ura;
-
-			while (row[teden[i]] == "00-24"){
-				ostanek += 24;
-				i++;
-			}
-
-			text += "<t class='text-danger'>Za plačat ostane še ";
-			if (ostanek != 0){
-				text += "<b>"+ostanek+"ur</b> in ";
-			}
-			text += "<b>"+minute+" minut</b></t><br />";
-			return text;
-		}
-	}else if (row.Type == "2"){
-		//za plačat 1€ na dan, ki traja samo do 23:59
-		var ostanek = 23-ura;
-		
-		text += "<t class='text-danger'>Za plačat 1€, ki traja do konca dneva,<br/>trenutno ostane še ";
-		if (ostanek != 0){
-			text += "<b>"+ostanek+"ur</b> in ";
-		}
-		text += "<b>"+minute+" minut</b></t><br />";
-		return text;
-
-	}else if (row.Type == "3"){
-		if (dan == "0"){
-			var ostanek = 23 - ura;
-			if (danes == "6"){
-				 ostanek += 24;
-			}
-			
-			text += "<t class='text-success'>Brezplačno še ";
-			if (ostanek != 0){
-				text += "<b>"+ostanek+"ur</b> in ";
-			}
-			text += "<b>"+minute+" minut</b></t><br />";
-			return text;
-		}else{
-			return "<b class='text-danger'>Za plačat 1€ za 24ur,<br />sobota in nedelja brezplačno</b><br />";
-		}
-	}else if (row.Type == "4"){
-		return "<b class='text-danger'>Vedno je za plačat!</b><br />";
+/*function rowAttributes(row, index) {
+	return {
+		'data-toggle': 'popover',
+		'data-placement': 'bottom',
+		'data-trigger': 'hover',
+		'data-content': [
+			'Koordinate: ' + row.Stanje
+			].join(', ')
 	}
-	else{
-		return "<b class='text-warning'>Ne obratuje trenutno</b><br />";
-	}
+}
 
-}*/						
+$(function() {
+	$('#table').on('post-body.bs.table', function (e) {
+		$('[data-toggle="popover"]').popover()
+	})
+})*/
 
 function bold(value){				
 	return "<b>"+value.slice(3)+"</b>";			
@@ -161,3 +98,15 @@ function Slice(value){
 function cenePodatki(value, row){
 	return "<b>Prva ura:</b> "+cena(row.PrvaUra)+"<br /><b>Vsaka naslednja:</b> "+cena(row.NovaUra);
 }
+
+function urnik(value, row){
+	var teden = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+	var urnik = row[teden[$("#dan").val()]];
+	
+	if(urnik == "0"){
+		return "<t class='text-success'>Brezplačno</t>";
+	}else{
+		return urnik;
+	}
+}
+

@@ -6,37 +6,88 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">		
 		<!-- Bootstrap CSS -->		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">		
-		<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.14.2/dist/bootstrap-table.min.css">		
+		<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.14.2/dist/bootstrap-table.min.css">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>		
 		<title>ParkMeLite</title>		
 		<link rel="icon" href="favicon.ico" type="image/x-icon" />
 	</head>
 	<body>		
 		<div class="container pb-4">			
-			<h1>Parkirna mesta</h1>
-			<h6 id="date"></h6>
+			<h1 class="text-center">Parkirna mesta</h1>
 			
-			<table class="table-striped" id="table" data-toggle="table" data-url="skripta.php" data-sortable="true" data-sort-name="Stanje" data-unique-id="prostCas">				
-				<thead class="bg-success text-light">			
-					<tr>					
-						<th data-field="Cona" data-formatter="bold" class="text-center" data-sortable="true">Cona</th>						
-						<th data-field="Parking">Ime<br />parkirišča</th>						
-						<!--<th data-field="stMest">Št. parkirnih mest</th>						
-						<th data-field="stInvalid">Št. mest za invalide</th>						
-						<th data-field="stElektricni">Št. mest za električna vozila</th>-->						
-						<th data-field="PrvaUra" data-formatter="cena" class="text-right d-none d-lg-table-cell" data-sortable="true">Cena za prvo uro</th>						
-						<th data-field="NovaUra" data-formatter="cena" class="text-right d-none d-lg-table-cell" data-sortable="true">Cena za vsako naslednjo uro</th>
-						<th data-field="" data-formatter="cenePodatki" class="d-none d-sm-table-cell d-lg-none text-nowrap" data-sortable="true">Cena</th>
-						<th data-field="Stanje" data-formatter="Slice" data-sortable="true">Stanje</th>					
-					</tr>				
-				</thead>			
-			</table>		
+			<form class="form-inline">
+			
+				<div class="input-group mb-2 mr-sm-2">
+					<div class="input-group-prepend">
+						<div class="input-group-text">Kraj:</div>
+					</div>
+					<select class="form-control" id="kraj">
+						<option>Koper</option>
+						<option disabled>Izola</option>
+						<option disabled>Lucija</option>
+						<option disabled>Portorož</option>
+					</select>
+				</div>
+			  
+				<div class="input-group mb-2 mr-sm-2">
+					<div class="input-group-prepend">
+						<div class="input-group-text">Dan:</div>
+					</div>
+					<select class="form-control" id="dan">
+						<option value="1">Ponedeljek</option>
+						<option value="2">Torek</option>
+						<option value="3">Sreda</option>
+						<option value="4">Četrtek</option>
+						<option value="5">Petek</option>
+						<option value="6">Sobota</option>
+						<option value="0">Nedelja</option>
+					</select>
+				</div>
+				
+				<div class="input-group mb-2 mr-sm-2">
+					<div class="input-group-prepend">
+						<div class="input-group-text">Ura:&nbsp;</div>
+					</div>
+					<input type="time" class="form-control" id="ura">
+				</div>
+				
+				
+					<button type="button" class="btn btn-success mb-2 mr-2 " id="set">Prikaži</button>
+					<button type="button" class="btn btn-success mb-2 mr-2" id="reset">Trenutni čas</button>
+				
+				<button type="button" class="btn btn-success col mb-2" id="map" disabled>Zemljevid</button>
+			</form>
+			
+			<div id="tabela" class="d-block">
+				<table class="table-striped" id="table" data-toggle="table" data-url="skripta.php?kraj=Koper" data-sortable="true" data-sort-name="Stanje" data-unique-id="prostCas">				
+					<thead class="bg-success text-light">			
+						<tr>					
+							<th data-field="Cona" data-formatter="bold" class="text-center" data-sortable="true">Cona</th>						
+							<th data-field="Parking">Ime <br class="d-block  d-sm-none"/>parkirišča</th>						
+							<!--<th data-field="stMest">Št. parkirnih mest</th>						
+							<th data-field="stInvalid">Št. mest za invalide</th>						
+							<th data-field="stElektricni">Št. mest za električna vozila</th>-->						
+							<!--<th data-field="PrvaUra" data-formatter="cena" class="text-right d-none d-lg-table-cell" data-sortable="true">Cena za prvo uro</th>						
+							<th data-field="NovaUra" data-formatter="cena" class="text-right d-none d-lg-table-cell" data-sortable="true">Cena za vsako naslednjo uro</th>-->
+							<th data-field="" data-formatter="cenePodatki" class="d-none  d-md-table-cell text-nowrap" data-sortable="true">Cena</th>
+							<th data-field="" data-formatter="urnik" class="d-none d-lg-table-cell text-nowrap" id="urnik">Urnik</th>
+							<th data-field="Stanje" data-formatter="Slice" data-sortable="true">Stanje</th>					
+						</tr>				
+					</thead>			
+				</table>
+			</div>
+			<div id="mapa" class="d-none">
+				<div id="mapid" style="height:400px" class="bg-info"></div>
+			</div>	
 		</div>		
 		<!-- Optional JavaScript -->		
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->		
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>		
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>		
-		<script src="https://unpkg.com/bootstrap-table@1.14.2/dist/bootstrap-table.min.js"></script>				
+		<script src="https://unpkg.com/bootstrap-table@1.14.2/dist/bootstrap-table.min.js"></script>
+		<!-- Make sure you put this AFTER Leaflet's CSS -->
+		<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>				
 		<script src="script.js"></script>	
 	</body>
 </html>

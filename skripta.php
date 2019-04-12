@@ -1,10 +1,20 @@
 <?php
-	$podatki = file_get_contents("ParkirnaMesta.json");
+
+	$kraj = $_GET["kraj"];
+	
+	$podatki = file_get_contents("ParkirnaMesta/".$kraj.".json");
 	$array = json_decode($podatki, true);
-	$čas = date("H")*60 + date("i");
+	$čas = $_GET["ura"];
+	if(is_null($čas)){
+		$čas = date("H")*60 + date("i");
+	}
+	
 	$mesec = date("m");
 	$dnevi = array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
-	$danNum = date("N") % 7;
+	$danNum = $_GET["dan"];
+	if(is_null($danNum)){
+		$danNum = date("N") % 7;
+	}
 	$dan = $dnevi[$danNum];
 
 	//foreach, pregled če rabi odstraniti obdobja ki ne obratujejo
